@@ -1,0 +1,40 @@
+body{
+    color: dodgerblue;
+    background-color: mediumseagreen;
+}    
+div{
+    color: indianred;
+    text-align: left;
+    
+}
+
+p{
+    text-align: left;
+    color: deeppink;
+    text-align: left;
+}    
+
+h1{
+    text-decoration:underline dashed darkorange;
+}
+
+#B{
+    float: left;
+    clear: right;
+    height: 200;
+
+}
+
+#c{
+    text-decoration: solid;
+    color: burlywood;
+}
+
+img{
+    border-radius: 90px;
+}
+
+.p{
+    float: right;
+    height: 100;
+}

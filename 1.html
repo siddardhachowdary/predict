@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <style>#outer{width:90%;max-width:600px;background:#fff;margin:0 auto}
+            #cover{border:2px solid #111;padding:15px 0}
+            .main{table-layout:fixed;width:94%;border:0;border-collapse:collapse;margin:0 auto}
+            .main td{padding:0 8px;vertical-align:middle;border:0}
+            .main input{width:100%;border:1px solid #ccc;margin:2px 0;padding:0 2%;height:22px;text-align:right}.ac{text-align:center}.b{font-weight:bold}
+            .main select{width:100%;border:1px solid #ccc;margin:2px 0;background:#fff;height:22px}.w50{width:50%}.main button{width:100%;font-weight:bold;margin:3px 0}    
+            c{
+                color: yellow;
+            }
+        
+        </style>
+
+    <link href="1.css" rel="stylesheet"></link> 
+            
+    </head>
+<body style="background-image: url('stock.jpg');">
+<div>
+    <h1>STOCK  RECKONER </h1>
+    <br>
+    <hr > > 
+    <img class="p" src="s1.jpg">
+    <p id="c"><hr></p>
+    <p id="c">STOCK BULLS 
+        <br>
+        FOUNDER & CEO 
+    </p>
+    <img id="B" src="SID.jpeg">
+
+</div>
+
+<div id=outer><div class='ac b'>Stocks Calculator</div><div id=cover>
+    <form name=tstest><div id=d1><table class=main><tr><td width=50%>Number of scrips<td><input type=number id=num onchange='stock();'>
+    <tr><td>Date of purchase<td><input type=date id=h1 onchange='stock();'>
+    <tr><td>Date of sale<td><input type=date id=h2 onchange='stock();'>
+    <tr><td>Purchase price per Share<td><input type=number id=purprice onchange='stock();'>
+    <tr><td>Sale price per Share<td><input type=number id=saleprice onchange='stock();'>
+    <tr><td>Dividend received<td><input type=number id=div onchange='stock();'>
+    <tr><td>Brokerage + Tax<td><input type=number id=stt onchange='stock();'>
+    <tr><td><button type=reset>Reset</button><td><button type=button onclick='stock();'>Submit</button><tr><td>Net Return<td><input class=op id=nroi><tr><td class=b>Annualised Return<td><input class=op id=arr></table></div></form>
+    </div>
+</div>
+
+<script>
+    function stock (){
+    var num=document.getElementById('num').value;var div=document.getElementById('div').value;var purprice=document.getElementById('purprice').value;var saleprice=document.getElementById('saleprice').value;var stt=document.getElementById('stt').value;var purcost=purprice*num;var salecost=saleprice*num;var date1=document.getElementById('h1').value;var date2=document.getElementById('h2').value;var pdate=Date.parse(date1);var sdate=Date.parse(date2);var msPerDay=24*60*60*1000;
+    days=Math.round((sdate*1-pdate*1 )/msPerDay);
+    if( num==null || purprice==null || sdate==null || pdate==null || purcost==null||salecost==null||num==0 || purprice==0 || sdate==0 || pdate==0 ||purcost==0||salecost==0){document.getElementById('nroi').value=document.getElementById('arr').value='Please enter data'};
+    if( sdate>= pdate )
+    {document.getElementById('nroi').value=(salecost*1+div*1)-purcost*1-stt*1;document.getElementById('arr').value=Math.round((document.getElementById('nroi').value/purcost )*( 365/days )*10000)/100+' %'}
+    else if( sdate < pdate )
+    {document.getElementById('arr').value='Incorrect date';document.getElementById('nroi').value='Incorrect date';alert ('<b>Error</b> : The Sale Date is prior to the Purchase Date. Please enter correct dates and recalculate.')}}
+    // Widget Code by https://karvitt.com/widgets/
+</script>
+<img src="s2.jpg">
+
+</body>
+</html>

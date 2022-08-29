@@ -1,0 +1,17 @@
+h1{
+    background-color: antiquewhite;
+    color: crimson;
+}
+
+body{
+    background-color: aquamarine;
+    background-image: url('s1.jpg');    
+    width: 10;
+    
+}
+
+tr{
+    border: 10;
+}
+
+
